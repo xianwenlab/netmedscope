@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "netmedscope"
+version = "0.1.0"
+description = "Offline web workbench for NetMedPy network-medicine screening"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+    "netmedpy>=0.2.0.1",
+    "networkx>=3.0",
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "flask>=3.0",
+]
+
+[project.scripts]
+netmedscope = "netmedscope.cli:main"
+
+[tool.setuptools]
+packages = ["netmedscope"]
+
+[tool.setuptools.package-data]
+netmedscope = ["templates/*.html"]
